@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/FirstFragment">
+
+    <fragment
+        android:id="@+id/FirstFragment"
+        android:name="com.example.russian1900final.FirstFragment"
+        android:label="@string/main_welcome"
+        tools:layout="@layout/fragment_main">
+
+        <action
+            android:id="@+id/action_FirstFragment_to_CharacterChoiceFragment"
+            app:destination="@id/CharacterChoiceFragment">
+            <argument android:defaultValue="none"
+                android:name="continueType" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/CharacterChoiceFragment"
+        android:name="com.example.russian1900final.CharacterChoiceFragment"
+        tools:layout="@layout/fragment_characterchoice">
+        <argument
+            android:name="continueType"
+            app:argType="com.example.russian1900final.ContinueType"
+            android:defaultValue="CHRONOLOGICAL" />
+
+        <action
+            android:id="@+id/action_SecondFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/SceneResponseFragment"
+        android:name="com.example.russian1900final.SceneResponseFragment"
+        tools:layout="@layout/fragment_sceneresponse">
+        <argument
+            android:name="continueType"
+            app:argType="com.example.russian1900final.ContinueType"
+            android:defaultValue="CHRONOLOGICAL" />
+
+        <action
+            android:id="@+id/action_SecondFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+    </fragment>
+</navigation>
