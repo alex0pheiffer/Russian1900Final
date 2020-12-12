@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <!--dialog-->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/dialogWidth"
+    android:layout_height="@dimen/dialogHeight"
+    android:layout_gravity="center">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/redDeath"/>
+    <TextView
+        android:id="@+id/dialog_title"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:gravity="center"
+        android:fontFamily="@font/title_font_family"
+        android:textColor="@color/white"
+        android:textSize="@dimen/title_font"
+        android:background="@color/greyDarker"
+        android:text="@string/word_ref"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/dialog_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/dialogMargin"
+        app:layout_constraintTop_toBottomOf="@id/dialog_title"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

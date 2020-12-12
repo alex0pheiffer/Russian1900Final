@@ -31,6 +31,7 @@
                 android:layout_weight="15"
                 android:layout_height="match_parent"
                 android:gravity="center_vertical"
+                android:fontFamily="@font/title_font_family"
                 android:textSize="18sp"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

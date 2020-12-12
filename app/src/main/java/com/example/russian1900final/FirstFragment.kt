@@ -6,12 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.navigation.NavDirections
 import androidx.navigation.fragment.findNavController
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
  */
-class FirstFragment : Fragment() {
+class   FirstFragment : Fragment() {
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
@@ -32,10 +33,13 @@ class FirstFragment : Fragment() {
         ft.commit()
 
         view.findViewById<Button>(R.id.main_continueChrono).setOnClickListener {
-            findNavController().navigate(R.id.action_FirstFragment_to_CharacterChoiceFragment)
+            val action: NavDirections = FirstFragmentDirections.actionFirstFragmentToCharacterChoiceFragment(ContinueType.CHRONOLOGICAL.typeNum)
+            this.findNavController().navigate(action)
         }
         view.findViewById<Button>(R.id.main_continueRand).setOnClickListener {
-            findNavController().navigate(R.id.action_FirstFragment_to_CharacterChoiceFragment)
+            val action: NavDirections = FirstFragmentDirections.actionFirstFragmentToCharacterChoiceFragment(ContinueType.RANDOM.typeNum)
+            this.findNavController().navigate(action)
+            //findNavController().navigate(R.id.action_FirstFragment_to_CharacterChoiceFragment)
         }
     }
 }

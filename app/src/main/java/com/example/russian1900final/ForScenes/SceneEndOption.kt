@@ -7,9 +7,7 @@ import com.example.russian1900final.Glide.MonthEnum
  */
 class SceneEndOption(
     val character: CharacterChoice, // what character does this scene correspond with?
-    val miniSceneAmt: Int,    // how many parts are there to this?
-    val specificMonth: MonthEnum?, // if there's no specific month, leave this null
-    val specificDay: Int?, // a day in the above month. null if none.
-    val charChoice: Pair<CharacterChoice, CharacterChoice>,
-    val mainBackground: String
+    val text: Array<String>,        // text for the miniscenes
+    val isDead: Boolean,            // if the character dies
+    val mainBackground: String      // background (not necessarily the same as parent)
 )

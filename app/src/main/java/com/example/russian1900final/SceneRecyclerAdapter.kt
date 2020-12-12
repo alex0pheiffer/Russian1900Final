@@ -19,20 +19,18 @@ class SceneRecyclerAdapter(
 ) :
     RecyclerView.Adapter<SceneRecyclerAdapter.ViewHolder>() {
 
-    var timeDown: Long = 0
-    var isDown: Boolean = false
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SceneRecyclerAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view: View
         view = LayoutInflater.from(parent.context)
             .inflate(R.layout.item_scene_holder, parent, false)
-        return SceneRecyclerAdapter.ViewHolder(
+        return ViewHolder(
             view
         )
     }
 
     override fun onBindViewHolder(
-        holder: SceneRecyclerAdapter.ViewHolder,
+        holder: ViewHolder,
         position: Int
     ) {
         holder.scene = mList[position]
@@ -40,11 +38,17 @@ class SceneRecyclerAdapter(
 
         // check if the previous position exists
         if (position-1 >= 0) {
-            if (mList[position-1].year != mList[position].year)
+            if (mList[position-1].year != mList[position].year) {
                 holder.year?.text = mList[position].year.toString()
+                Log.d("TEST1","Pos $position, Yr ${mList[position].year}, Nm ${mList[position].name}, Txt ${holder.name?.text}, ${holder.year}")
+            }
+            else {
+                holder.year?.text = ""
+            }
         }
         else {
             holder.year?.text = mList[position].year.toString()
+            Log.d("TEST2","Pos $position, Yr ${mList[position].year}, Nm ${mList[position].name}, Txt ${holder.name?.text}")
         }
 
         // set default theme

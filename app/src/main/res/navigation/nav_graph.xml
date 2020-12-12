@@ -13,9 +13,10 @@
 
         <action
             android:id="@+id/action_FirstFragment_to_CharacterChoiceFragment"
-            app:destination="@id/CharacterChoiceFragment">
-            <argument android:defaultValue="none"
-                android:name="continueType" />
+            app:destination="@id/CharacterChoiceFragment"
+            app:popUpTo="@id/FirstFragment"
+            app:popUpToInclusive="false">
+            <argument android:name="continueType" />
         </action>
     </fragment>
     <fragment
@@ -24,12 +25,17 @@
         tools:layout="@layout/fragment_characterchoice">
         <argument
             android:name="continueType"
-            app:argType="com.example.russian1900final.ContinueType"
-            android:defaultValue="CHRONOLOGICAL" />
+            app:argType="string"
+            android:defaultValue="A" />
 
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+            android:id="@+id/action_SecondFragment_to_SceneResponseFragment"
+            app:destination="@id/SceneResponseFragment"
+            app:popUpTo="@id/CharacterChoiceFragment"
+            app:popUpToInclusive="false">
+            <argument android:name="continueType" />
+            <argument android:name="charChoice" />
+        </action>
     </fragment>
     <fragment
         android:id="@+id/SceneResponseFragment"
@@ -37,11 +43,25 @@
         tools:layout="@layout/fragment_sceneresponse">
         <argument
             android:name="continueType"
-            app:argType="com.example.russian1900final.ContinueType"
-            android:defaultValue="CHRONOLOGICAL" />
+            app:argType="string"
+            android:defaultValue="A" />
+
+        <argument
+            android:name="charChoice"
+            app:argType="string"
+            android:defaultValue="A" />
 
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+            android:id="@+id/action_SceneResponseFragment_to_CharacterChoiceFragment"
+            app:destination="@id/CharacterChoiceFragment"
+            app:popUpTo="@id/CharacterChoiceFragment"
+            app:popUpToInclusive="false">
+            <argument android:name="continueType" />
+        </action>
+        <action
+            android:id="@+id/action_SceneResponseFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment"
+            app:popUpTo="@id/FirstFragment"
+            app:popUpToInclusive="false"/>
     </fragment>
 </navigation>

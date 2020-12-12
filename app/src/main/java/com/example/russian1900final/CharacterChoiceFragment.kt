@@ -9,7 +9,9 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.navigation.NavDirections
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.russian1900final.ForScenes.Scene
 import com.example.russian1900final.Glide.G_Call
 
@@ -20,6 +22,7 @@ class CharacterChoiceFragment : Fragment() {
 
     var mListener: CharacterChoiceListener? = null
     var mScene: Scene? = null
+    lateinit var mContinue: String
     var gcall: G_Call? = null
 
     lateinit var date: TextView
@@ -37,6 +40,9 @@ class CharacterChoiceFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         gcall = G_Call()
+        val args: SceneResponseFragmentArgs by navArgs()
+        mContinue = args.continueType
+
         val background = view.findViewById<ImageView>(R.id.character_background)
         val char0img = view.findViewById<ImageView>(R.id.character_choice0img)
         val char1img = view.findViewById<ImageView>(R.id.character_choice1img)
@@ -52,12 +58,14 @@ class CharacterChoiceFragment : Fragment() {
         mScene = mListener?.getScene()
         if (mScene != null) {
             // set images
-            gcall?.loadImage(mScene!!.mainBackground, background, background)
-            gcall?.loadImage(mScene!!.charChoice.first.iconAlive, char0img, char0img)
-            gcall?.loadImage(mScene!!.charChoice.second.iconAlive, char1img, char1img)
+            gcall?.loadImageBackground(mScene!!.mainBackground, background, background)
+            gcall?.loadImageOther(mScene!!.charChoice.first.character.iconAlive, char0img, char0img)
+            gcall?.loadImageOther(mScene!!.charChoice.second.character.iconAlive, char1img, char1img)
             // set button names
-            char0.text = mScene!!.charChoice.first.name
-            char1.text = mScene!!.charChoice.second.name
+            char0.text = mScene!!.charChoice.first.character.name
+            char1.text = mScene!!.charChoice.second.character.name
+            // set the text
+            text.text = mScene!!.text
         }
 
         gcall?.setTitle(mScene, title, date)
@@ -65,11 +73,13 @@ class CharacterChoiceFragment : Fragment() {
 
         char0.setOnClickListener {
             mListener?.setCharacter(0)
-            findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
+            val action: NavDirections = CharacterChoiceFragmentDirections.actionSecondFragmentToSceneResponseFragment(mContinue, CharChoice.FIRST.typeNum)
+            this.findNavController().navigate(action)
         }
         char1.setOnClickListener {
             mListener?.setCharacter(1)
-            findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
+            val action: NavDirections = CharacterChoiceFragmentDirections.actionSecondFragmentToSceneResponseFragment(mContinue, CharChoice.SECOND.typeNum)
+            this.findNavController().navigate(action)
         }
 
         upBtn.setOnClickListener {

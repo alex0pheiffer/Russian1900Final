@@ -13,5 +13,6 @@
     <color name="greyDarker">#333333</color>
     <color name="redDeath">#800000</color>
     <color name="redLight">#CC0000</color>
+    <color name="live">#30BF4F</color>
     <color name="yellow">#F7FA4D</color>
 </resources>

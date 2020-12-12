@@ -1,3 +1,11 @@
 <resources>
     <dimen name="fab_margin">16dp</dimen>
+    <dimen name="title_font">20sp</dimen>
+    <dimen name="text_font">18sp</dimen>
+    <dimen name="dialogHeight">550dp</dimen>
+    <dimen name="dialogWidth">300dp</dimen>
+    <dimen name="textRecyclerHeight">95dp</dimen>
+    <dimen name="refImgMargin">20dp</dimen>
+    <dimen name="refTextMargin">20dp</dimen>
+    <dimen name="dialogMargin">10dp</dimen>
 </resources>

@@ -3,9 +3,11 @@
 
     <string name="main_welcome">Welcome to my Final Project. Please select a scene.</string>
     <string name="second_fragment_label">Second Fragment</string>
+    <string name="word_back">Back</string>
     <string name="word_continue">Continue</string>
     <string name="word_chrono">Chronologically</string>
     <string name="word_rand">Random</string>
+    <string name="word_ref">References</string>
     <string name="previous">Previous</string>
     <string name="word_home">Home</string>
 
