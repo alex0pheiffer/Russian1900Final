@@ -815,7 +815,11 @@ class SceneList {
         return mArray[i]
     }
     fun getScene(scene: Scene): Int {
-        return mArray.indexOf(scene)
+        for (i in 0 until mArray.size) {
+            if (mArray[i].name == scene.name)
+                return i
+        }
+        return 0
     }
 
     fun size(): Int {

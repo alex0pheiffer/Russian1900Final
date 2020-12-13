@@ -54,13 +54,11 @@ class SceneRecyclerAdapter(
             if (position - 1 >= 0) {
                 if (mList[position - 1].year != mList[position].year) {
                     holder.year?.text = mList[position].year.toString()
-                    Log.d("TEST1", "Pos $position, Yr ${mList[position].year}, Nm ${mList[position].name}, Txt ${holder.name?.text}, ${holder.year}")
                 } else {
                     holder.year?.text = ""
                 }
             } else {
                 holder.year?.text = mList[position].year.toString()
-                Log.d("TEST2", "Pos $position, Yr ${mList[position].year}, Nm ${mList[position].name}, Txt ${holder.name?.text}")
             }
 
             // set default theme

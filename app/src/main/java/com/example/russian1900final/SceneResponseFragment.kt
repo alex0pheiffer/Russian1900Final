@@ -162,12 +162,14 @@ class SceneResponseFragment : Fragment(), ReferenceDialog.DialogListener {
                 // change scene chronologically
                 if (mContinue == ContinueType.CHRONOLOGICAL) {
                     val index = mList.getScene(mScene!!)
+                    Log.d("SET SCENE",""+mScene!!.name+" "+index)
                     if (index+1 >= mList.size()) {
                         // return to the home scene; we went through all the scenes
                         val action: NavDirections =SceneResponseFragmentDirections.actionSceneResponseFragmentToFirstFragment()
                         this.findNavController().navigate(action)
                     }
                     else {
+                        Log.d("SET SCENE",mList.getScene(index + 1).name)
                         mListener?.setScene(mList.getScene(index + 1))
                         val action: NavDirections =SceneResponseFragmentDirections.actionSceneResponseFragmentToCharacterChoiceFragment(
                                 mContinue.typeNum
