@@ -33,37 +33,50 @@ class SceneRecyclerAdapter(
         holder: ViewHolder,
         position: Int
     ) {
-        holder.scene = mList[position]
-        holder.name?.text = mList[position].name
+        if (mList[position].isFiller) {
 
-        // check if the previous position exists
-        if (position-1 >= 0) {
-            if (mList[position-1].year != mList[position].year) {
-                holder.year?.text = mList[position].year.toString()
-                Log.d("TEST1","Pos $position, Yr ${mList[position].year}, Nm ${mList[position].name}, Txt ${holder.name?.text}, ${holder.year}")
-            }
-            else {
-                holder.year?.text = ""
+            holder.scene = null
+            holder.name?.text = ""
+            holder.year?.text = ""
+
+            holder.setThemeNonSelect(activity)
+
+            holder.mView.setOnClickListener {
+                // do nothing
             }
         }
         else {
-            holder.year?.text = mList[position].year.toString()
-            Log.d("TEST2","Pos $position, Yr ${mList[position].year}, Nm ${mList[position].name}, Txt ${holder.name?.text}")
-        }
 
-        // set default theme
-        if (listener?.getScene() != holder.scene)
-            holder.setThemeNonSelect(activity)
-        else
-            holder.setThemeSelect(activity)
+            holder.scene = mList[position]
+            holder.name?.text = mList[position].name
 
-        holder.mView.setOnClickListener {
-            // chose the scene
-            if (holder.scene != null)
-                listener?.setScene(holder.scene!!)
+            // check if the previous position exists
+            if (position - 1 >= 0) {
+                if (mList[position - 1].year != mList[position].year) {
+                    holder.year?.text = mList[position].year.toString()
+                    Log.d("TEST1", "Pos $position, Yr ${mList[position].year}, Nm ${mList[position].name}, Txt ${holder.name?.text}, ${holder.year}")
+                } else {
+                    holder.year?.text = ""
+                }
+            } else {
+                holder.year?.text = mList[position].year.toString()
+                Log.d("TEST2", "Pos $position, Yr ${mList[position].year}, Nm ${mList[position].name}, Txt ${holder.name?.text}")
+            }
 
-            // remove theme from now unselected
-            notifyDataSetChanged()
+            // set default theme
+            if (listener?.getScene() != holder.scene)
+                holder.setThemeNonSelect(activity)
+            else
+                holder.setThemeSelect(activity)
+
+            holder.mView.setOnClickListener {
+                // chose the scene
+                if (holder.scene != null)
+                    listener?.setScene(holder.scene!!)
+
+                // remove theme from now unselected
+                notifyDataSetChanged()
+            }
         }
     }
 
