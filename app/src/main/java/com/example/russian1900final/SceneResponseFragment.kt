@@ -163,7 +163,8 @@ class SceneResponseFragment : Fragment(), ReferenceDialog.DialogListener {
                 if (mContinue == ContinueType.CHRONOLOGICAL) {
                     val index = mList.getScene(mScene!!)
                     Log.d("SET SCENE",""+mScene!!.name+" "+index)
-                    if (index+1 >= mList.size()) {
+                    if (index+1 >= mList.size()-1) // subtract one because theres a filler scene at the bottom of the recycler
+                    {
                         // return to the home scene; we went through all the scenes
                         val action: NavDirections =SceneResponseFragmentDirections.actionSceneResponseFragmentToFirstFragment()
                         this.findNavController().navigate(action)

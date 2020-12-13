@@ -280,7 +280,7 @@ class SceneList {
                         "You are also faced with other problems. Some post-war problems included depopulation of cities, infrastructure collapse, childcare (large orphan population), and unification of the country.",
                         "Other existing problems from the revolution were also still unsolved, such as how to structure a communist state as it has never been done before."),
                 false,
-                "https://www.inquiriesjournal.com/imgs/1200x1200/crop/article-images/uid-222-1056442730-3519/0ac487.png")
+                "https://lh3.googleusercontent.com/proxy/JKG0bMZFGTlUMtD7ppW9ABSlYNILtuNxCaOgI5RJP32xbpDZk1nP7edc-hJFPko4BAft1QclgpBDXTJHZgoNeENKgfG10PmkSFiicObCjFxBmTArYGcRPlYvy0PG")
         val sub4_1 = SceneEndOption(civilian.craftCivilian(),
                 arrayOf("The NEP did little to immediately alleviate your problems and concerns.",
                         "Famine was still widespread, many people had been displaced and killed because of the war, and the constant changes with the government caused confusion and disorder.",
@@ -297,7 +297,7 @@ class SceneList {
                 "Due to the unsuccessful War Communism policy, the Bolsheviks instituted the New Economic Policy (NEP), a partial free-market reforms in order to stabilize the economy. This particularly applied to food supplies and was meant to help with the massive food shortage.",
                 arrayOf(),
                 arrayOf(RefClass("https://ssoltanhistory.weebly.com/uploads/8/8/1/0/8810349/6810504_orig.jpg", true),
-                        RefClass("https://www.inquiriesjournal.com/imgs/1200x1200/crop/article-images/uid-222-1056442730-3519/0ac487.png", true),
+                        RefClass("https://lh3.googleusercontent.com/proxy/JKG0bMZFGTlUMtD7ppW9ABSlYNILtuNxCaOgI5RJP32xbpDZk1nP7edc-hJFPko4BAft1QclgpBDXTJHZgoNeENKgfG10PmkSFiicObCjFxBmTArYGcRPlYvy0PG", true),
                         RefClass("https://i2.wp.com/www.military-history.org/wp-content/uploads/2017/10/Russia-ragged-cold-starving-RCW.jpg?resize=1024%2C786&ssl=1", true))
         )
 
@@ -527,7 +527,7 @@ class SceneList {
         /*
         Death of Stalin - March 5, 1953
         */
-        val sub16_0 = SceneEndOption(mCharacters[13],
+        val sub16_0 = SceneEndOption(mCharacters[12],
                 arrayOf("You are now dead."),
                 true,
                 "https://englishrussia.com/wp-content/uploads/2019/03/213.jpg")
@@ -642,7 +642,7 @@ class SceneList {
                 Pair(sub19_0, sub19_1),
                 "https://pbs.twimg.com/media/Dnm8hqkWsAAsGEj.jpg",
                 "A peak occurred under Brezhnev. During his time in office there was an emphasis on stability,  with lots of war awards being given. Public health and life expectancy improved (or didn’t decrease) and the quality living peaked. After his death, a series of leaders in poor health followed him, each which didn’t last long. Finally in 1985, Mikhail Gorbachev became the next leader of the Soviet Union.",
-                arrayOf(),
+                arrayOf(RefClass("Alexievich, S. (2013). Secondhand Time.",false)),
                 arrayOf(RefClass("https://pbs.twimg.com/media/Dnm8hqkWsAAsGEj.jpg", true),
                         RefClass("https://cdn.britannica.com/71/194471-050-06A60E75/Mikhail-Gorbachev-1991.jpg", true),
                         RefClass("https://karsh.org/wordpress/wp-content/uploads/2017/06/Yousuf-Karsh-Mikhail-Gorbachev.jpg", true))
