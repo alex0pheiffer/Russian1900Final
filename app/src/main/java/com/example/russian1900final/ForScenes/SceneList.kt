@@ -531,7 +531,7 @@ class SceneList {
                 arrayOf("You are now dead."),
                 true,
                 "https://englishrussia.com/wp-content/uploads/2019/03/213.jpg")
-        val sub16_1 = SceneEndOption(mCharacters[6],
+        val sub16_1 = SceneEndOption(mCharacters[16],
                 arrayOf("On February 24-25, 1956, Nikita Khrushchev delivered his secret speech to the 20th party congress. In his speech, Khrushchev denounced Stalin and stated that what he did was wrong.",
                         "“Stalin originated the concept ‘enemy of the people.’ This term automatically made it unnecessary that the ideological errors of a man or men engaged in a controversy be proven,” (Khrushchev).",
                         "Khrushchev declared that the state now needed to fix the things Stalin did wrong.",
