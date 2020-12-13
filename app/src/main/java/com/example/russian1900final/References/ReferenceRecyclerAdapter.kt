@@ -58,6 +58,8 @@ class ReferenceRecyclerAdapter(
                     isNowImg = true
                     sizeImg()
                     gc.loadImageBackground(value.str, img, img)
+                    text.gravity = Gravity.NO_GRAVITY
+                    text.setTextColor(mView.resources.getColor(R.color.white, null))
                 }
                 else {
                     if (isNowImg) {

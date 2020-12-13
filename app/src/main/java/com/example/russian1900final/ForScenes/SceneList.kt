@@ -68,7 +68,8 @@ class SceneList {
         February Revolution - March 8, 1917
          */
         val sub1_0 = SceneEndOption(mCharacters[4],
-                arrayOf("You joined other workers and citizens in the streets to protest the Tsar. As a result of all the people’s efforts, the Tsar stepped down voluntarily and was replaced with the Provisional Government."),
+                arrayOf("You joined other workers and citizens in the streets to protest the Tsar. As a result of all the people’s efforts, the Tsar stepped down voluntarily and was replaced with the Provisional Government.",
+                "A large election was to be held which allowed lots of people to vote, including women!"),
                 false,
                 "https://media.iwm.org.uk/ciim5/15/655/super_000000.jpg")
         val sub1_1 = SceneEndOption(mCharacters[8],
